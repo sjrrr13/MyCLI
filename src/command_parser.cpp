@@ -1,12 +1,11 @@
-#include "parser.h"
+#include "command_parser.h"
 
 #include <sstream>
 
-namespace parser
+namespace commandparser
 {
     void ParseCommand(const std::string &input, COMMAND *command)
     {
-        // 提取命令名称和参数
         // std::string commandName = ExtractName(input);
         // std::vector<std::string> commandArgs = ExtractArguments(input);
         // std::cout << input << std::endl;

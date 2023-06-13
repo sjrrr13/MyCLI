@@ -10,8 +10,12 @@ include_directories(
 add_executable(
     MyCLI 
     main.cpp
-    include/parser.h
-    src/parser.cpp
+    include/command.h
+    include/command_parser.h
+    include/command_register.h
+    include/command_result.h
+    src/command_parser.cpp
+    src/command_register.cpp
     )
 
 # target_link_libraries 必须要在 add_executable 之后，因为要先编译再链接
