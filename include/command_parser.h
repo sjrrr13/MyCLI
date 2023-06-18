@@ -16,7 +16,7 @@ namespace commandparser
 
     void ExtractArguments(const std::string &, const std::string, std::vector<std::string> *);
 
-    void ExecuteCommand(const std::string &, const std::vector<std::string> &);
+    // void ExecuteCommand(const std::string &, const std::vector<std::string> &);
 };
 
 #endif  // COMMAND_PARSER_H

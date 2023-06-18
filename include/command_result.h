@@ -13,4 +13,13 @@ enum class COMMANDRESULT
     InvalidArguments
 };
 
+class CommandResult
+{
+public:
+    CommandResult();
+
+private:
+    int result;
+};
+
 #endif  // COMMAND_RESULT_H

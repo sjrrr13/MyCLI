@@ -11,28 +11,37 @@ void CommandRegistry::RegisterCommand(const std::string &name, CommandHandler ha
     registry[name] = handler;
 }
 
-void CommandRegistry::ExecuteCommand(COMMAND& command)
+CommandHandler CommandRegistry::GetCommand(const std::string &name)
 {
-    auto it = registry.find(command.name);
+    auto it = registry.find(name);
     if (it != registry.end())
-    {
-        COMMANDRESULT result = it->second(command.args);
-
-        switch (result)
-        {
-        case COMMANDRESULT::Success:
-            std::cout << "Command executed successfully." << std::endl;
-            break;
-        case COMMANDRESULT::Failure:
-            std::cout << "Command execution failed." << std::endl;
-            break;
-        case COMMANDRESULT::InvalidArguments:
-            std::cout << "Invalid command arguments." << std::endl;
-            break;
-        default:
-            break;
-        }
-    }
+        return it->second;
     else
-        std::cout << "Command not found: " << command.name << std::endl;
+        return nullptr;
 }
+
+// void CommandRegistry::ExecuteCommand(COMMAND& command)
+// {
+//     auto it = registry.find(command.name);
+//     if (it != registry.end())
+//     {
+//         COMMANDRESULT result = it->second(command.args);
+
+//         switch (result)
+//         {
+//         case COMMANDRESULT::Success:
+//             std::cout << "Command executed successfully." << std::endl;
+//             break;
+//         case COMMANDRESULT::Failure:
+//             std::cout << "Command execution failed." << std::endl;
+//             break;
+//         case COMMANDRESULT::InvalidArguments:
+//             std::cout << "Invalid command arguments." << std::endl;
+//             break;
+//         default:
+//             break;
+//         }
+//     }
+//     else
+//         std::cout << "Command not found: " << command.name << std::endl;
+// }

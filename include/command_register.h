@@ -15,6 +15,7 @@
 
 using CommandHandler = std::function<COMMANDRESULT(const std::vector<std::string> &)>;
 
+// Registry needs to implement Singleton pattern, design it as a class.
 class CommandRegistry
 {
 public:
@@ -22,18 +23,18 @@ public:
 
     void RegisterCommand(const std::string &, CommandHandler);
 
-    void ExecuteCommand(COMMAND &);
+    CommandHandler GetCommand(const std::string &);
 
 private:
     std::unordered_map<std::string, CommandHandler> registry;
 
     CommandRegistry() = default;
 
-    // 禁用拷贝构造函数
+    // Disable copy constructor.
     CommandRegistry(const CommandRegistry &) = delete;
 
-    // 禁用赋值运算符
+    // Disable assignment operator.
     CommandRegistry &operator=(const CommandRegistry &) = delete;
 };
 
-#endif  // COMMAND_REGISTER_H
+#endif // COMMAND_REGISTER_H

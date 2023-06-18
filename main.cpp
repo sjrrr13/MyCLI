@@ -47,7 +47,7 @@ int main()
     // p->Info();
 
     cr.RegisterCommand("PrintArguments", PrintArguments);
-    cr.ExecuteCommand(cmd);
+    // cr.ExecuteCommand(cmd);
 
     return 0;
 }
