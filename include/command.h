@@ -15,17 +15,6 @@ struct COMMAND
     std::string name;
     std::vector<std::string> args;
 
-    void Info()
-    {
-        std::cout << name << "; ";
-        std::vector<std::string>::iterator it;
-        std::cout << args.size() << " args: ";
-        for (it = args.begin(); it != args.end(); ++it)
-            std::cout << *it << " ";
-
-        std::cout << std::endl;
-    }
-
     void clear()
     {
         name = "";

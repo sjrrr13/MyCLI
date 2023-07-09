@@ -7,16 +7,11 @@
 #define COMMAND_PARSER_H
 
 #include "command.h"
+#include <sstream>
 
 namespace commandparser
 {
     void ParseCommand(const std::string &, COMMAND *);
-
-    void ExtractName(const std::string &, std::string *);
-
-    void ExtractArguments(const std::string &, const std::string, std::vector<std::string> *);
-
-    // void ExecuteCommand(const std::string &, const std::vector<std::string> &);
 };
 
 #endif  // COMMAND_PARSER_H

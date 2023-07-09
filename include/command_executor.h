@@ -10,23 +10,8 @@
 #include "command.h"
 #include <sstream>
 
-// class CommandExecutor
-// {
-// public:
-//     static CommandExecutor &GetInstance();
-
-//     void ExecuteCommand(COMMAND &);
-
-// private:
-//     CommandRegistry& registry;
-
-//     CommandExecutor(): registry(CommandRegistry::GetInstance()) {};
-// };
-
 namespace commandexe
 {
-    void Run(CommandRegistry &);
-
     void ExecuteCommand(COMMAND &, CommandRegistry &, std::ostringstream &);
 };
 

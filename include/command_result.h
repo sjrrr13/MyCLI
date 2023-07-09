@@ -8,12 +8,6 @@
 
 #include <string>
 
-// enum class COMMANDRESULT
-// {
-//     Success,
-//     Failure
-// };
-
 struct COMMANDRESULT
 {
     int code;
@@ -21,17 +15,5 @@ struct COMMANDRESULT
 
     COMMANDRESULT(int c, const std::string &m) : code(c), msg(m){};
 };
-
-// class CommandResult
-// {
-// public:
-//     CommandResult();
-
-//     std::string GetMessage();
-
-// private:
-//     int code;
-//     std::string message;
-// };
 
 #endif // COMMAND_RESULT_H

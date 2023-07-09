@@ -15,7 +15,6 @@
 
 using CommandHandler = std::function<COMMANDRESULT(const std::vector<std::string> &)>;
 
-// Registry needs to implement Singleton pattern, design it as a class.
 class CommandRegistry
 {
 public:
