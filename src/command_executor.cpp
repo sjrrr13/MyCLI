@@ -23,29 +23,27 @@ namespace commandexe
     //     }
     // }
 
-    void ExecuteCommand(COMMAND &command, CommandRegistry &registry)
+    void ExecuteCommand(COMMAND &command, CommandRegistry &registry, std::ostringstream &buffer)
     {
         auto cmd = registry.GetCommand(command.name);
         if (cmd != nullptr)
         {
             COMMANDRESULT result = cmd(command.args);
+            buffer << "code " << result.code << ": " << result.msg << std::endl;
 
-            switch (result)
-            {
-            case COMMANDRESULT::Success:
-                std::cout << "Command executed successfully." << std::endl;
-                break;
-            case COMMANDRESULT::Failure:
-                std::cout << "Command execution failed." << std::endl;
-                break;
-            case COMMANDRESULT::InvalidArguments:
-                std::cout << "Invalid command arguments." << std::endl;
-                break;
-            default:
-                break;
-            }
+            // switch (result.code)
+            // {
+            // case 1:
+            //     buffer << result.msg << std::endl;
+            //     break;
+            // case -1:
+            //     buffer << "Command execution failed." << std::endl;
+            //     break;
+            // default:
+            //     break;
+            // }
         }
         else
-            std::cout << "Command not found: " << command.name << std::endl;
+            buffer << "Command not found: " << command.name << std::endl;
     }
 }

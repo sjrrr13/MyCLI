@@ -8,6 +8,7 @@
 
 #include "command_register.h"
 #include "command.h"
+#include <sstream>
 
 // class CommandExecutor
 // {
@@ -26,7 +27,7 @@ namespace commandexe
 {
     void Run(CommandRegistry &);
 
-    void ExecuteCommand(COMMAND &, CommandRegistry &);
+    void ExecuteCommand(COMMAND &, CommandRegistry &, std::ostringstream &);
 };
 
 #endif // COMMAND_EXECUTOR_H

@@ -8,17 +8,22 @@
 #include "command_parser.h"
 #include "command_register.h"
 #include "command_executor.h"
-
-static bool flag;
+#include <sstream>
 
 class MyCLI
 {
 public:
     void Run();
 
+    // void Stop();
+
     void SetPrompt(std::string &);
 
-    void SetUsage(std::string &);
+    // void SetBuffer();
+
+    // void SetUsage(std::string &);
+
+    // void SetHelp(const std::string &);
 
     void AddCommand(const std::string &, CommandHandler);
 
@@ -28,10 +33,10 @@ private:
     CommandRegistry &registry;
     bool flag;
     std::string prompt;
-    std::string usage;
+    // std::string usage;
+    std::ostringstream buffer;
 };
 
-COMMANDRESULT HelpCommand(const std::vector<std::string> &);
-COMMANDRESULT ExitCommand(const std::vector<std::string> &);
+//  COMMANDRESULT HelpCommand(const std::vector<std::string> &);
 
 #endif // MYCLI_H

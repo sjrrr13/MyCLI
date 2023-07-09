@@ -6,20 +6,32 @@
 #ifndef COMMAND_RESULT_H
 #define COMMAND_RESULT_H
 
-enum class COMMANDRESULT
+#include <string>
+
+// enum class COMMANDRESULT
+// {
+//     Success,
+//     Failure
+// };
+
+struct COMMANDRESULT
 {
-    Success,
-    Failure,
-    InvalidArguments
+    int code;
+    std::string msg;
+
+    COMMANDRESULT(int c, const std::string &m) : code(c), msg(m){};
 };
 
-class CommandResult
-{
-public:
-    CommandResult();
+// class CommandResult
+// {
+// public:
+//     CommandResult();
 
-private:
-    int result;
-};
+//     std::string GetMessage();
 
-#endif  // COMMAND_RESULT_H
+// private:
+//     int code;
+//     std::string message;
+// };
+
+#endif // COMMAND_RESULT_H
